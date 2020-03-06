@@ -3,7 +3,6 @@
 class Solution {
 public:
     int largestRectangleArea(vector<int>& heights) {
-        
     stack<pair<int, int>> s; //to make index height make
     pair<int, int> tp;       //to store top element of the stack
     int max_area = 0;
@@ -28,21 +27,19 @@ public:
 
             if(max_area < curr_area)
                 max_area = curr_area;
-        }
-
-        
+        } 
     }
     while(!s.empty())
     {
          tp = s.top();
-            s.pop();
-            if(s.empty())
-                curr_area = tp.height *(i);
-            else
-                curr_area = tp.height *(i-(s.top()).index-1);
+         s.pop();
+         if(s.empty())
+             curr_area = tp.height *(i);
+         else
+             curr_area = tp.height *(i-(s.top()).index-1);
 
-            if(max_area < curr_area)
-                max_area = curr_area;
+         if(max_area < curr_area)
+             max_area = curr_area;
     }
     return max_area;
     }
