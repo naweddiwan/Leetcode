@@ -1,4 +1,4 @@
-void helper(map<int, vector<int>> &m, TreeNode *root)
+    void helper(map<int, vector<int>> &m, TreeNode *root)
     {
       if(root==NULL)
           return;
@@ -17,22 +17,18 @@ void helper(map<int, vector<int>> &m, TreeNode *root)
                 q.push(make_pair((front.first)->right, front.second+1));
             m[front.second].push_back(front.first->val);
         }
-        
     }
     vector<vector<int>> levelOrder(TreeNode* root)
     {
-       
-         map<int, vector<int> > m;
-        
-            
+        map<int, vector<int> > m;
         helper(m,root);
         
         int n =m.size();
+        
         vector<vector<int>> res(n);
         for(auto it:m)
         {
             res[it.first] = it.second;
         }
         return res;
-        
     }
