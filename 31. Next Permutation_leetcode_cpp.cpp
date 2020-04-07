@@ -17,24 +17,18 @@
              
                 for(int j=i+1; j<n; j++)
                 {
-                   
                    if(MIN > nums[j] && nums[j] > nums[i])
                    {
-               
                        ind = j;
                        MIN = nums[j];
                    }
                 }
-               
                 swap(nums[i-1], nums[ind]);
                 sort(nums.begin()+i, nums.end());
                 flag=1;
                 break;
-                
             }
-            
         }
         if(flag!=1)
-        sort(nums.begin(), nums.end());
-        
+        sort(nums.begin(), nums.end()); 
     }
